@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new userS_params
+    @user = User.new users_params
 
     if @user.save
       redirect_to controller: 'sessions', action: :new
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   private
 
-  def userS_params
+  def users_params
     params.require(:user).permit(:name, :password, :password_confirmation)
   end
 end
