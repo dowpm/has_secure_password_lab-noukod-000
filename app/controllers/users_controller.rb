@@ -4,11 +4,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    
+
   end
 
   private
 
   def userS_params
     params.require(:user).permit(:name, :password)
+  end
 end
