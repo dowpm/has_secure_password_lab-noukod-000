@@ -4,7 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new userS_params
+    @user = User.new userS_params
+
+    if @user.save
+
+    else
+
+    end
   end
 
   private
