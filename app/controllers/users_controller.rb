@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-
+    user = User.new userS_params
   end
 
   private
