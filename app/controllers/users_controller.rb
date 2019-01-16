@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to controller: 'sessions', action: :new
     else
       flash[:alert] = 'Failed creating your account'
-      flash[:error] = @user.errors.messages
+      # flash[:error] = @user.errors.messages
       redirect_to controller: 'users', action: :new
     end
   end
