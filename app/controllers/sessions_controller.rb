@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user = User.find_by(params[:user][:name])
-      return head(:forbidden) unless @user.authenticate(params[:password])
+      return head(:forbidden) unless @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       redirect_to controller: 'users', action: :index
     else
