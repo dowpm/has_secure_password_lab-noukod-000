@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   post 'users', to: 'users#create'
 
+  get 'home', to: 'users#index'
+
   get 'login', to: 'sessions#new'
 
   post 'login', to: 'sessions#create'
