@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new userS_params
 
     if @user.save
-
+      redirect_to controller: 'sessions', action: :new
     else
 
     end
