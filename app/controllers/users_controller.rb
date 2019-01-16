@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
     if @user.save
       redirect_to controller: 'sessions', action: :new
+      session[:user_id] = @user.id
     else
       flash[:alert] = 'Failed creating your account'
       # flash[:error] = @user.errors.messages
