@@ -4,12 +4,12 @@
   <%= flash[:alert] %><br>
 <% end %>
 
-<%= form_tag 'login', method: :post %>
-  <%= label_tag 'Name' %><br>
-  <%= text_field_tag 'name' %><br><br>
+<%= form_for @user, url: 'login' do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br><br>
 
-  <%= label_tag 'Password' %><br>
-  <%= text_field_tag 'password' %><br><br>
+  <%= f.label :password %><br>
+  <%= f.text_field :password %><br><br>
 
-  <%= submit 'Signup'%>
+  <%= f.submit 'Signup'%>
 <% end %>
