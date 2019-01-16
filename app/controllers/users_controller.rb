@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to controller: 'sessions', action: :new
     else
-      flash[:alert] = 'Failed creating your account'}
+      flash[:alert] = 'Failed creating your account'
       redirect_to controller: 'users', action: :new
     end
   end
