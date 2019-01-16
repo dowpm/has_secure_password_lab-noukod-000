@@ -1,5 +1,9 @@
 <h1>Signup</h1>
 
+<% if flash.has? 'alert' %>
+  <%= flash[:alert] %>
+<% end %>
+
 <%= form_for @user do |f| %>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br><br>
