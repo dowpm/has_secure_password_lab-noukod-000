@@ -3,12 +3,11 @@ class SessionsController < ApplicationController
   end
 
   def create
+    if @user = User.find_by(params[:name])
+      return head(:forbidden) unless @user.authenticate(params[:password])
+      session[:user_id] = @user.id
 
-  end
-
-  private
-
-  def sessions_params
-    params.require(:user).permit(:name, :password)
+    if @user
+      
   end
 end
